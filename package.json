@@ -13,5 +13,9 @@
     "express-graphql": "^0.12.0",
     "graphql": "^15.5.0",
     "mongoose": "^5.12.5"
-  }
+  },
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  } 
 }
