@@ -2,6 +2,7 @@ const express = require('express');
 const {graphqlHTTP} = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
+const expressPlayground = require("graphql-playground-middleware-express").default;
 const port = process.env.PORT || 3000
 
 const app = express();
@@ -17,6 +18,7 @@ app.use('/graphql', graphqlHTTP({
     schema,
     graphiql: true
 }));
+app.get("/playground", expressPlayground({ endpoint: "/graphql" }));
 
 app.listen(port, () => {
     console.log('now listening for requests on port'+port);
